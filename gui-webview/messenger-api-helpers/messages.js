@@ -30,7 +30,7 @@ const SERVER_URL = process.env.SERVER_URL;
  */
 const setPreferencesButton = {
   type: 'web_url',
-  title: 'Set Gift Preferences',
+  title: 'Open Menu',
   url: `${SERVER_URL}/`,
   webview_height_ratio: 'tall',
   messenger_extensions: true,
@@ -85,7 +85,7 @@ const helloRewardMessage = {
     type: 'template',
     payload: {
       template_type: 'button',
-      text: 'Thanks for joining our reward program! We’d love to send you a free birthday gift.',
+      text: 'Welcome to FB Smart Ordering for Pokestop!',
       buttons: [setPreferencesButton],
     },
   },
