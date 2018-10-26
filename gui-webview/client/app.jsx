@@ -397,9 +397,9 @@ export default class App extends React.PureComponent {
             </FormCell>
           </Form>
         </section> */}
-        {/* <ButtonArea className='see-options'>
+        <ButtonArea className='see-options'>
           <Button onClick={() => this.pushData()}>Add to Cart</Button>
-        </ButtonArea> */}
+        </ButtonArea>
       </div>
     );
   }
