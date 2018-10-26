@@ -338,7 +338,7 @@ export default class App extends React.PureComponent {
 
     return (
       <div className='app'>
-        <section>
+        {/* <section>
           <CellsTitle>Date of Birth</CellsTitle>
           <Form>
             <FormCell select id='date-of-birth'>
@@ -357,14 +357,14 @@ export default class App extends React.PureComponent {
               </CellBody>
             </FormCell>
           </Form>
-        </section>
+        </section> */}
 
         <section>
-          <CellsTitle>Preferred Gift Type</CellsTitle>
+          <CellsTitle>Menu Items</CellsTitle>
           <Form radio id='gift-type'>{giftCategories}</Form>
         </section>
 
-        <section>
+        {/* <section>
           <CellsTitle>What is your current environment like?</CellsTitle>
           <div id='env-slider'>
             <Slider
@@ -377,29 +377,29 @@ export default class App extends React.PureComponent {
             />
             {environments}
           </div>
-        </section>
+        </section> */}
 
-        <section>
+        {/* <section>
           <CellsTitle>What are your top skin concerns?</CellsTitle>
           <Form checkbox>{skinTypes}</Form>
-        </section>
+        </section> */}
 
-        <section id='arrival-periods'>
+        {/* <section id='arrival-periods'>
           <CellsTitle>New Arrivals</CellsTitle>
           <Form radio id='arrivalPeriod'>{arrivalPeriods}</Form>
-        </section>
+        </section> */}
 
-        <section>
+        {/* <section>
           <Form>
             <FormCell switch>
               <CellBody>Save this info for next time</CellBody>
               <CellFooter>{persistSwitch}</CellFooter>
             </FormCell>
           </Form>
-        </section>
-        <ButtonArea className='see-options'>
-          <Button onClick={() => this.pushData()}>See Gift Options</Button>
-        </ButtonArea>
+        </section> */}
+        {/* <ButtonArea className='see-options'>
+          <Button onClick={() => this.pushData()}>Add to Cart</Button>
+        </ButtonArea> */}
       </div>
     );
   }
