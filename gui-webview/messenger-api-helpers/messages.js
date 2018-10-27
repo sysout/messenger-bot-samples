@@ -70,7 +70,7 @@ const chooseGiftButton = (giftId) => {
  */
 const changeGiftButton = {
   type: 'postback',
-  title: 'Change Gift',
+  title: 'Change Options',
   payload: JSON.stringify({
     type: 'CHANGE_GIFT',
   }),
