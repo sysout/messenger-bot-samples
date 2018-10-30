@@ -79,24 +79,32 @@ export default class App extends React.PureComponent {
 
   static giftCategories = [
     {
-      title: 'Moisturizers',
-      subtitle: 'Daily moisturizers & night creams',
-      image: 'moisturizers-filtered-cropped.jpg',
+      title: 'Ahi Tuna',
+      subtitle: 'Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds',
+      price: 11.50,
+      quantity: 0,
+      image: 'pokestop_menu/ahi_tuna.jpg',
     },
     {
-      title: 'Cleansers',
-      subtitle: 'Face washes, wipes & exfoliators',
-      image: 'cleansers-filtered-cropped.jpg',
+      title: 'Chili Ponzu Salmon',
+      subtitle: 'Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds',
+      price: 10.00,
+      quantity: 0,
+      image: 'pokestop_menu/chili_ponzu_salmon.jpg',
     },
     {
-      title: 'Masks',
-      subtitle: 'Face & sheet masks',
-      image: 'masks-filtered-cropped.jpg',
+      title: 'Garlic Ahi',
+      subtitle: 'Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds',
+      price: 12.50,
+      quantity: 0,
+      image: 'pokestop_menu/garlic_ahi.jpg',
     },
     {
-      title: 'Lip Treatments',
-      subtitle: 'Balms & sunscreen',
-      image: 'lip-treatments-filtered-cropped.jpg',
+      title: 'Spicy Salmon',
+      subtitle: 'Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds',
+      price: 11.50,
+      quantity: 0,
+      image: 'pokestop_menu/spicy_salmon.jpg',
     },
   ]
 
@@ -288,13 +296,15 @@ export default class App extends React.PureComponent {
     });
 
     const giftCategories =
-      App.giftCategories.map(({title, subtitle, image}, index) => {
+      App.giftCategories.map(({title, subtitle, price, quantity, image}, index) => {
         const value = Gift.CATEGORIES[index];
 
         return (
           <GiftCategory
             key={value}
             title={title}
+            price={price}
+            quantity={quantity}
             subtitle={subtitle}
             image={image}
             selected={value === this.state.giftCategory}
@@ -361,7 +371,7 @@ export default class App extends React.PureComponent {
 
         <section>
           <CellsTitle>Menu Items</CellsTitle>
-          <Form radio id='gift-type'>{giftCategories}</Form>
+          <Form checkbox id='gift-type'>{giftCategories}</Form>
         </section>
 
         {/* <section>

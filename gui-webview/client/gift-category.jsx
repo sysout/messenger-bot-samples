@@ -17,12 +17,12 @@ import SelectedIndicator from './selected-indicator.jsx';
  * Conditionally renders an indicator is the categoyr is selected
  */
 
-const GiftCategory = ({title, subtitle, image, selected, setGiftCategory}) => {
+const GiftCategory = ({title, subtitle, price, quantity, image, selected, setGiftCategory}) => {
   const imagePath = `/media/${image}`;
 
   return (
     <FormCell
-      radio
+      checkbox
       className='gift-category'
       onClick={() => setGiftCategory()}
     >
@@ -32,6 +32,8 @@ const GiftCategory = ({title, subtitle, image, selected, setGiftCategory}) => {
 
       <CellBody className='gift-title checkbox-text'>{title}</CellBody>
       <CellBody className='gift-subtitle checkbox-text'>{subtitle}</CellBody>
+      <CellBody className='gift-subtitle checkbox-text'>{price}</CellBody>
+      <CellBody className='gift-subtitle checkbox-text'>{quantity}</CellBody>
 
       <CellFooter className='gift-image'>
         <img src={imagePath} />
@@ -43,6 +45,8 @@ const GiftCategory = ({title, subtitle, image, selected, setGiftCategory}) => {
 GiftCategory.propTypes = {
   title: React.PropTypes.string.isRequired,
   subtitle: React.PropTypes.string.isRequired,
+  price: React.PropTypes.number.isRequired,
+  quantity: React.PropTypes.number.isRequired,
   image: React.PropTypes.string.isRequired, // name of file in `../public/media`
   selected: React.PropTypes.bool.isRequired,
   setGiftCategory: React.PropTypes.func.isRequired,

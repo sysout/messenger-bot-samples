@@ -51,4 +51,5 @@ jspm_packages
 .DS_Store
 .env
 
-submit.sh
+1config.sh
+2config.sh
