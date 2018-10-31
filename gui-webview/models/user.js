@@ -58,6 +58,10 @@ export default class User {
     arrivalPeriod: User.ARRIVAL_PERIODS[0],
     environment: User.ENVIRONMENTS[1],
     skinTypes: [],
+    ahiTunaCount: 0,
+    chiliPonzuSalmonCount: 0,
+    garlicAhi: 0,
+    spicySalmon: 0
   };
 
   /* eslint-disable max-len */
@@ -83,6 +87,10 @@ export default class User {
       arrivalPeriod,
       environment,
       skinTypes,
+      ahiTunaCount,
+      chiliPonzuSalmonCount,
+      garlicAhi,
+      spicySalmon
     } = Object.assign({}, User.DEFAULT_ATTRIBUTES, attributes);
 
     this.id = id;
@@ -92,6 +100,10 @@ export default class User {
     this.environment = environment;
     this.skinTypes = skinTypes;
     this.preferredGift = GiftStore.getByCategoryId(giftCategory)[0];
+    this.ahiTunaCount = ahiTunaCount;
+    this.chiliPonzuSalmonCount = chiliPonzuSalmonCount;
+    this.garlicAhi = garlicAhi;
+    this.spicySalmon = spicySalmon;
   }
 
   /**

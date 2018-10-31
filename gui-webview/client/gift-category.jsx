@@ -8,7 +8,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 
 import React from 'react';
-import {CellBody, CellFooter, CellHeader, FormCell, Radio} from 'react-weui';
+import {CellBody, CellFooter, CellHeader, FormCell, Radio, Button} from 'react-weui';
 
 import SelectedIndicator from './selected-indicator.jsx';
 
@@ -22,18 +22,19 @@ const GiftCategory = ({title, subtitle, price, quantity, image, selected, setGif
 
   return (
     <FormCell
-      checkbox
       className='gift-category'
       onClick={() => setGiftCategory()}
     >
       <CellHeader>
-        <SelectedIndicator on={selected}/>
       </CellHeader>
 
       <CellBody className='gift-title checkbox-text'>{title}</CellBody>
-      <CellBody className='gift-subtitle checkbox-text'>{subtitle}</CellBody>
-      <CellBody className='gift-subtitle checkbox-text'>{price}</CellBody>
-      <CellBody className='gift-subtitle checkbox-text'>{quantity}</CellBody>
+      <CellBody className='gift-subtitle checkbox-text'>${price}</CellBody>
+      {/* <CellBody className='gift-subtitle checkbox-text'>{quantity}</CellBody> */}
+
+      <button class='plus-button'>+</button>
+      <input id='quantity-input'></input>
+      <button class='minus-button'>-</button>
 
       <CellFooter className='gift-image'>
         <img src={imagePath} />

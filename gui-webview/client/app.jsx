@@ -79,30 +79,30 @@ export default class App extends React.PureComponent {
 
   static giftCategories = [
     {
-      title: 'Ahi Tuna',
+      title: 'Ahi Tuna Bowl',
       subtitle: 'Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds',
-      price: 11.50,
+      price: 12,
       quantity: 0,
       image: 'pokestop_menu/ahi_tuna.jpg',
     },
     {
-      title: 'Chili Ponzu Salmon',
+      title: 'Chili Ponzu Salmon Bowl',
       subtitle: 'Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds',
-      price: 10.00,
+      price: 10,
       quantity: 0,
       image: 'pokestop_menu/chili_ponzu_salmon.jpg',
     },
     {
-      title: 'Garlic Ahi',
+      title: 'Garlic Ahi Bowl',
       subtitle: 'Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds',
-      price: 12.50,
+      price: 14,
       quantity: 0,
       image: 'pokestop_menu/garlic_ahi.jpg',
     },
     {
-      title: 'Spicy Salmon',
+      title: 'Spicy Salmon Bowl',
       subtitle: 'Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds',
-      price: 11.50,
+      price: 12,
       quantity: 0,
       image: 'pokestop_menu/spicy_salmon.jpg',
     },
@@ -138,6 +138,19 @@ export default class App extends React.PureComponent {
     environment: null,
     skinTypes: [],
     persist: true,
+    quantities: Array(1).fill(0)
+  }
+
+  addQuantity(index) {
+    quantities=this.state.quantities.slice();
+    quantities[index]=this.state.quantities[index]+1;
+    this.setState({quantities});
+  }
+
+  decreaseQuantity(index) {
+    quantities=this.state.quantities.slice();
+    quantities[index]=this.state.quantities[index]-1;
+    this.setState({quantities});
   }
 
   /* =============================================
@@ -304,11 +317,13 @@ export default class App extends React.PureComponent {
             key={value}
             title={title}
             price={price}
-            quantity={quantity}
+            quantity={this.state.quantities[index]}
             subtitle={subtitle}
             image={image}
             selected={value === this.state.giftCategory}
             setGiftCategory={() => this.setGiftCategory(value)}
+            addQuantity={() => this.addQuantity(index)}
+            decreaseQuantity={() => this.decreaseQuantity(index)}
           />
         );
       });
@@ -370,7 +385,7 @@ export default class App extends React.PureComponent {
         </section> */}
 
         <section>
-          <CellsTitle>Menu Items</CellsTitle>
+          <CellsTitle>Bowls</CellsTitle>
           <Form checkbox id='gift-type'>{giftCategories}</Form>
         </section>
 

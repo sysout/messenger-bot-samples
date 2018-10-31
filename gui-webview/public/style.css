@@ -115,7 +115,7 @@ body,
 }
 
 .gift-image img {
-  width: 1em;
+  width: 2em;
   height: 1em;
 
   font-size: 3rem;
@@ -221,6 +221,10 @@ section {
 
 .weui-btn-area_inline.see-options {
   width: 91%;
+}
+
+.quantity-button-area {
+  margin-left:20px;
 }
 
 #arrivalPeriod .weui-cell__hd:first-child {
@@ -339,6 +343,29 @@ section {
   color: #222;
   position: absolute;
   top: 18px;
+  left:10px;
+  margin-left:5px;
+  /* display:block;
+  margin-left: auto;
+  margin-right: auto; */
+  /* width: 50%; */
+}
+
+.plus-button {
+  border: 1px solid gray;
+  background-color: red;
+  padding: 4px 12px;
+  width:3px;
+  height:5px;
+  margin-left:20px
+}
+
+.minus-button {
+
+}
+
+#quantity-input {
+  width: 15px
 }
 
 .gift-subtitle {
@@ -346,6 +373,8 @@ section {
   color: #999;
   position: absolute;
   bottom: 18px;
+  left: 15px;
+  margin-left:0px;
 }
 
 .indicator img {
