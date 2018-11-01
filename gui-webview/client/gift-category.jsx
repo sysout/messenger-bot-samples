@@ -8,7 +8,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 
 import React from 'react';
-import {CellBody, CellFooter, CellHeader, FormCell, Radio} from 'react-weui';
+import {CellBody, CellFooter, CellHeader, FormCell, Radio, Button} from 'react-weui';
 
 import SelectedIndicator from './selected-indicator.jsx';
 
@@ -17,21 +17,24 @@ import SelectedIndicator from './selected-indicator.jsx';
  * Conditionally renders an indicator is the categoyr is selected
  */
 
-const GiftCategory = ({title, subtitle, image, selected, setGiftCategory}) => {
+const GiftCategory = ({title, subtitle, price, quantity, image, selected, setGiftCategory}) => {
   const imagePath = `/media/${image}`;
 
   return (
     <FormCell
-      radio
       className='gift-category'
       onClick={() => setGiftCategory()}
     >
       <CellHeader>
-        <SelectedIndicator on={selected}/>
       </CellHeader>
 
       <CellBody className='gift-title checkbox-text'>{title}</CellBody>
-      <CellBody className='gift-subtitle checkbox-text'>{subtitle}</CellBody>
+      <CellBody className='gift-subtitle checkbox-text'>${price}</CellBody>
+      {/* <CellBody className='gift-subtitle checkbox-text'>{quantity}</CellBody> */}
+
+      <button class='plus-button'>+</button>
+      <input id='quantity-input'></input>
+      <button class='minus-button'>-</button>
 
       <CellFooter className='gift-image'>
         <img src={imagePath} />
@@ -43,6 +46,8 @@ const GiftCategory = ({title, subtitle, image, selected, setGiftCategory}) => {
 GiftCategory.propTypes = {
   title: React.PropTypes.string.isRequired,
   subtitle: React.PropTypes.string.isRequired,
+  price: React.PropTypes.number.isRequired,
+  quantity: React.PropTypes.number.isRequired,
   image: React.PropTypes.string.isRequired, // name of file in `../public/media`
   selected: React.PropTypes.bool.isRequired,
   setGiftCategory: React.PropTypes.func.isRequired,

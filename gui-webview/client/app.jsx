@@ -79,24 +79,32 @@ export default class App extends React.PureComponent {
 
   static giftCategories = [
     {
-      title: 'Moisturizers',
-      subtitle: 'Daily moisturizers & night creams',
-      image: 'moisturizers-filtered-cropped.jpg',
+      title: 'Ahi Tuna Bowl',
+      subtitle: 'Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds',
+      price: 12,
+      quantity: 0,
+      image: 'pokestop_menu/ahi_tuna.jpg',
     },
     {
-      title: 'Cleansers',
-      subtitle: 'Face washes, wipes & exfoliators',
-      image: 'cleansers-filtered-cropped.jpg',
+      title: 'Chili Ponzu Salmon Bowl',
+      subtitle: 'Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds',
+      price: 10,
+      quantity: 0,
+      image: 'pokestop_menu/chili_ponzu_salmon.jpg',
     },
     {
-      title: 'Masks',
-      subtitle: 'Face & sheet masks',
-      image: 'masks-filtered-cropped.jpg',
+      title: 'Garlic Ahi Bowl',
+      subtitle: 'Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds',
+      price: 14,
+      quantity: 0,
+      image: 'pokestop_menu/garlic_ahi.jpg',
     },
     {
-      title: 'Lip Treatments',
-      subtitle: 'Balms & sunscreen',
-      image: 'lip-treatments-filtered-cropped.jpg',
+      title: 'Spicy Salmon Bowl',
+      subtitle: 'Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds',
+      price: 12,
+      quantity: 0,
+      image: 'pokestop_menu/spicy_salmon.jpg',
     },
   ]
 
@@ -130,6 +138,19 @@ export default class App extends React.PureComponent {
     environment: null,
     skinTypes: [],
     persist: true,
+    quantities: Array(1).fill(0)
+  }
+
+  addQuantity(index) {
+    quantities=this.state.quantities.slice();
+    quantities[index]=this.state.quantities[index]+1;
+    this.setState({quantities});
+  }
+
+  decreaseQuantity(index) {
+    quantities=this.state.quantities.slice();
+    quantities[index]=this.state.quantities[index]-1;
+    this.setState({quantities});
   }
 
   /* =============================================
@@ -288,17 +309,21 @@ export default class App extends React.PureComponent {
     });
 
     const giftCategories =
-      App.giftCategories.map(({title, subtitle, image}, index) => {
+      App.giftCategories.map(({title, subtitle, price, quantity, image}, index) => {
         const value = Gift.CATEGORIES[index];
 
         return (
           <GiftCategory
             key={value}
             title={title}
+            price={price}
+            quantity={this.state.quantities[index]}
             subtitle={subtitle}
             image={image}
             selected={value === this.state.giftCategory}
             setGiftCategory={() => this.setGiftCategory(value)}
+            addQuantity={() => this.addQuantity(index)}
+            decreaseQuantity={() => this.decreaseQuantity(index)}
           />
         );
       });
@@ -338,7 +363,7 @@ export default class App extends React.PureComponent {
 
     return (
       <div className='app'>
-        <section>
+        {/* <section>
           <CellsTitle>Date of Birth</CellsTitle>
           <Form>
             <FormCell select id='date-of-birth'>
@@ -357,14 +382,14 @@ export default class App extends React.PureComponent {
               </CellBody>
             </FormCell>
           </Form>
-        </section>
+        </section> */}
 
         <section>
-          <CellsTitle>Preferred Gift Type</CellsTitle>
-          <Form radio id='gift-type'>{giftCategories}</Form>
+          <CellsTitle>Bowls</CellsTitle>
+          <Form checkbox id='gift-type'>{giftCategories}</Form>
         </section>
 
-        <section>
+        {/* <section>
           <CellsTitle>What is your current environment like?</CellsTitle>
           <div id='env-slider'>
             <Slider
@@ -377,28 +402,28 @@ export default class App extends React.PureComponent {
             />
             {environments}
           </div>
-        </section>
+        </section> */}
 
-        <section>
+        {/* <section>
           <CellsTitle>What are your top skin concerns?</CellsTitle>
           <Form checkbox>{skinTypes}</Form>
-        </section>
+        </section> */}
 
-        <section id='arrival-periods'>
+        {/* <section id='arrival-periods'>
           <CellsTitle>New Arrivals</CellsTitle>
           <Form radio id='arrivalPeriod'>{arrivalPeriods}</Form>
-        </section>
+        </section> */}
 
-        <section>
+        {/* <section>
           <Form>
             <FormCell switch>
               <CellBody>Save this info for next time</CellBody>
               <CellFooter>{persistSwitch}</CellFooter>
             </FormCell>
           </Form>
-        </section>
+        </section> */}
         <ButtonArea className='see-options'>
-          <Button onClick={() => this.pushData()}>See Gift Options</Button>
+          <Button onClick={() => this.pushData()}>Add to Cart</Button>
         </ButtonArea>
       </div>
     );

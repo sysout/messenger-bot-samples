@@ -50,3 +50,6 @@ jspm_packages
 
 .DS_Store
 .env
+
+1config.sh
+2config.sh
