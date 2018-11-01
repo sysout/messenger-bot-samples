@@ -116,7 +116,7 @@ const receiptMessage = {
       ],
       "elements":[
         {
-          "title":"Ahi Tuna",
+          "title":"Ahi Tuna $12 x1",
           "subtitle":"Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds. Toppings: Cucumber, seaweed salad, roasted seaweed, sweet furikake,",
           "quantity":1,
           "price":11.50,
@@ -124,7 +124,7 @@ const receiptMessage = {
           "image_url":"https://cdn.pbrd.co/images/HL5pve5.jpg"
         },
         {
-          "title":"Chili Ponzu Salmon",
+          "title":"Chili Ponzu Salmon $10 x1",
           "subtitle":"Marinated with scallions, cilantro, sesame seeds, and chili ponzu. Toppings: Edamame, kani salad, mango, masago, onion crisps",
           "quantity":1,
           "price":11.50,
