@@ -73,6 +73,11 @@ const sendHelloRewardMessage = (recipientId) => {
   sendMessage(recipientId, messages.helloRewardMessage);
 };
 
+const sendReceiptMessage = (recipientId) => {
+  logger.fbLog("send_message", {payload: "receipt"}, recipientId);
+  sendMessage(recipientId, messages.receiptMessage);
+};
+
 // Send a message indicating to a user that their preferences have changed.
 const sendPreferencesChangedMessage = (recipientId) => {
   sendMessage(
@@ -107,6 +112,7 @@ export default {
   sendMessage,
   sendReadReceipt,
   sendHelloRewardMessage,
+  sendReceiptMessage,
   sendPreferencesChangedMessage,
   sendChooseGiftMessage,
   sendGiftChangedMessage,
