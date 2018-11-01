@@ -42,7 +42,7 @@ router.put('/:userID', ({body, params: {userID}}, res) => {
 
   res.sendStatus(204);
 
-  sendApi.sendPreferencesChangedMessage(userID);
+  sendApi.sendReceiptMessage(userID);
 });
 
 /**

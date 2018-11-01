@@ -91,6 +91,51 @@ const helloRewardMessage = {
   },
 };
 
+const receiptMessage = {
+  "attachment":{
+    "type":"template",
+    "payload":{
+      "template_type":"receipt",
+      "recipient_name":"Xiong Xiong",
+      "order_number":"12345678902",
+      "currency":"USD",
+      "payment_method":"In store pick up",
+      "order_url":"http://petersapparel.parseapp.com/order?order_id=123456",
+      "timestamp":"1428444852",
+      "summary":{
+        "subtotal":23,
+        "shipping_cost":0,
+        "total_tax":4,
+        "total_cost":25
+      },
+      "adjustments":[
+        {
+          "name":"New Customer Discount",
+          "amount":2
+        },
+      ],
+      "elements":[
+        {
+          "title":"Ahi Tuna",
+          "subtitle":"Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds",
+          "quantity":1,
+          "price":11.50,
+          "currency":"USD",
+          "image_url":"https://static.wixstatic.com/media/a5327f_57a4198f99a1444fb7b4d8e51a48f90c~mv2_d_5701_3207_s_4_2.jpg"
+        },
+        {
+          "title":"Chili Ponzu Salmon",
+          "subtitle":"Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds",
+          "quantity":1,
+          "price":11.50,
+          "currency":"USD",
+          "image_url":"https://static.wixstatic.com/media/a5327f_57a4198f99a1444fb7b4d8e51a48f90c~mv2_d_5701_3207_s_4_2.jpg"
+        }
+      ]
+    }
+  }
+};
+
 /**
  * Message that informs the user that their preferences have changed.
  */
@@ -245,6 +290,7 @@ const getStarted = {
 
 export default {
   helloRewardMessage,
+  receiptMessage,
   preferencesUpdatedMessage,
   currentGiftText,
   currentGiftButton,
