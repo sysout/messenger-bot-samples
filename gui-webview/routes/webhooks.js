@@ -61,14 +61,20 @@ router.post('/', (req, res) => {
     // There may be multiple if batched
     data.entry.forEach((pageEntry) => {
       // Iterate over each messaging event and handle accordingly
+      console.log("pageEntry");
       pageEntry.messaging.forEach((messagingEvent) => {
         console.log({messagingEvent});
+        console.log("messagingEvent");
         if (messagingEvent.message) {
+          console.log("messagingEvent.message");
           receiveApi.handleReceiveMessage(messagingEvent);
         } else if (messagingEvent.postback) {
+          console.log("messagingEvent.postback");
           receiveApi.handleReceivePostback(messagingEvent);
         } else if (messagingEvent.referral) {
-          receiveApi.handleReceiveReferral(messagingEvent);
+          console.log("messagingEvent.referral");
+          receiveApi.handleReceiveMessage(messagingEvent);
+          // receiveApi.handleReceiveReferral(messagingEvent);
         } else {
           console.log(
             'Webhook received unknown messagingEvent: ',
