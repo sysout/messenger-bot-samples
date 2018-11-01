@@ -33,7 +33,7 @@ const GiftCategory = ({title, subtitle, price, quantity, image, selected, setGif
       {/* <CellBody className='gift-subtitle checkbox-text'>{quantity}</CellBody> */}
 
       <button class='plus-button'>+</button>
-      <input id='quantity-input' value="0"></input>
+      <input id='quantity-input'></input>
       <button class='minus-button'>-</button>
 
       <CellFooter className='gift-image'>
