@@ -117,19 +117,19 @@ const receiptMessage = {
       "elements":[
         {
           "title":"Ahi Tuna",
-          "subtitle":"Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds",
+          "subtitle":"Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds. Toppings: Cucumber, seaweed salad, roasted seaweed, sweet furikake,",
           "quantity":1,
           "price":11.50,
           "currency":"USD",
-          "image_url":"https://static.wixstatic.com/media/a5327f_57a4198f99a1444fb7b4d8e51a48f90c~mv2_d_5701_3207_s_4_2.jpg"
+          "image_url":"https://cdn.pbrd.co/images/HL5pve5.jpg"
         },
         {
           "title":"Chili Ponzu Salmon",
-          "subtitle":"Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds",
+          "subtitle":"Marinated with scallions, cilantro, sesame seeds, and chili ponzu. Toppings: Edamame, kani salad, mango, masago, onion crisps",
           "quantity":1,
           "price":11.50,
           "currency":"USD",
-          "image_url":"https://static.wixstatic.com/media/a5327f_57a4198f99a1444fb7b4d8e51a48f90c~mv2_d_5701_3207_s_4_2.jpg"
+          "image_url":"https://cdn.pbrd.co/images/HL5oTMD.jpg"
         }
       ]
     }
