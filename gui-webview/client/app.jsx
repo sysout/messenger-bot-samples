@@ -138,7 +138,13 @@ export default class App extends React.PureComponent {
     environment: null,
     skinTypes: [],
     persist: true,
-    quantities: Array(1).fill(0)
+    quantities: Array(4).fill(0)
+  }
+
+  updateQuantity(index, value) {
+    quantities=this.state.quantities.slice();
+    quantities[index]=value;
+    this.setState({...this.state, quantities:quantities});
   }
 
   addQuantity(index) {
@@ -386,7 +392,81 @@ export default class App extends React.PureComponent {
 
         <section>
           <CellsTitle>Bowls</CellsTitle>
-          <Form checkbox id='gift-type'>{giftCategories}</Form>
+          {/* <Form id='gift-type'>{giftCategories}</Form> */}
+          <Form>
+            <FormCell className='gift-category'>
+              <CellHeader className='gift-image'>
+                <img src='/media/pokestop_menu/ahi_tuna.jpg' />
+              </CellHeader>
+
+              <CellBody className='gift-title'>Ahi Tuna Bowl $12.00<br/>
+              <Slider
+                  min={0}
+                  max={10}
+                  step={1}
+                  defaultValue={0}
+                  showValue={true}
+                  onChange={(event)=>updateQuantity(0, event.target.value)}
+                  style={{width: 180}}
+              />
+              </CellBody>
+              <CellFooter/>
+            </FormCell>
+            <FormCell className='gift-category'>
+              <CellHeader className='gift-image'>
+                <img src='/media/pokestop_menu/chili_ponzu_salmon.jpg' />
+              </CellHeader>
+
+              <CellBody className='gift-title'>Chili Ponzu Salmon Bowl $10.00<br/>
+              <Slider
+                  min={0}
+                  max={10}
+                  step={1}
+                  defaultValue={0}
+                  showValue={true}
+                  onChange={(event)=>updateQuantity(1, event.target.value)}
+                  style={{width: 180}}
+              />
+              </CellBody>
+              <CellFooter/>
+            </FormCell>
+            <FormCell className='gift-category'>
+              <CellHeader className='gift-image'>
+                <img src='/media/pokestop_menu/garlic_ahi.jpg' />
+              </CellHeader>
+
+              <CellBody className='gift-title'>Garlic Ahi Bowl $14.00<br/>
+              <Slider
+                  min={0}
+                  max={10}
+                  step={1}
+                  defaultValue={0}
+                  showValue={true}
+                  onChange={(event)=>updateQuantity(2, event.target.value)}
+                  style={{width: 180}}
+              />
+              </CellBody>
+              <CellFooter/>
+            </FormCell>
+            <FormCell className='gift-category'>
+              <CellHeader className='gift-image'>
+                <img src='/media/pokestop_menu/spicy_salmon.jpg' />
+              </CellHeader>
+
+              <CellBody className='gift-title'>Spicy Salmon Bowl $12.00<br/>
+              <Slider
+                  min={0}
+                  max={10}
+                  step={1}
+                  defaultValue={0}
+                  showValue={true}
+                  onChange={(event)=>updateQuantity(3, event.target.value)}
+                  style={{width: 180}}
+              />
+              </CellBody>
+              <CellFooter/>
+            </FormCell>
+          </Form>
         </section>
 
         {/* <section>
