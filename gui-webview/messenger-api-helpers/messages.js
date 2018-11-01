@@ -103,10 +103,9 @@ const receiptMessage = {
       "order_url":"http://petersapparel.parseapp.com/order?order_id=123456",
       "timestamp":"1428444852",
       "summary":{
-        "subtotal":23,
-        "shipping_cost":0,
-        "total_tax":4,
-        "total_cost":25
+        "subtotal":22,
+        "total_tax":2,
+        "total_cost":22
       },
       "adjustments":[
         {
@@ -116,16 +115,16 @@ const receiptMessage = {
       ],
       "elements":[
         {
-          "title":"Ahi Tuna $12 x1",
-          "subtitle":"Marinated with onions, hijiki, green onion, scallions, sweet shoyu, and sesame seeds. Toppings: Cucumber, seaweed salad, roasted seaweed, sweet furikake,",
+          "title":"Ahi Tuna ",
+          "subtitle":"$12.00 x1",
           "quantity":1,
           "price":11.50,
           "currency":"USD",
           "image_url":"https://cdn.pbrd.co/images/HL5pve5.jpg"
         },
         {
-          "title":"Chili Ponzu Salmon $10 x1",
-          "subtitle":"Marinated with scallions, cilantro, sesame seeds, and chili ponzu. Toppings: Edamame, kani salad, mango, masago, onion crisps",
+          "title":"Chili Ponzu Salmon",
+          "subtitle":"$10.00 x1",
           "quantity":1,
           "price":11.50,
           "currency":"USD",
